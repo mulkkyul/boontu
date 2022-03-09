@@ -3,7 +3,7 @@ finding similar stocks using (kinda) dimensionality reduction
 
 The stock price data collected between Mar - Aug 2020 was used in the analysis.
 
-Demo: 
+Demo: https://share.streamlit.io/mulkkyul/boontu/main/demo.py
 
 ## More information
 - my blog (Korean): https://mulkkyul.github.io/2020/07/20/deep-stock/
