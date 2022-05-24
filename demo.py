@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import myPlots
-#from streamlit_option_menu import option_menu
+from streamlit_option_menu import option_menu
 
 import os
 import os.path as path
@@ -102,7 +102,16 @@ st.sidebar.markdown('<p class="sidebarHeader">'
                     '<span style=\"color: #ea4335\">boontu</span>'
                     '</p>', unsafe_allow_html=True)
 
-selected = st.sidebar.radio("Menu", ["Dollars", "DeepStock"])
+with st.sidebar:
+  selected = option_menu("Boontu", ["Home", 'Dollars', 'DeepStock'],
+                         icons=['house', 'currency-exchange', 'activity'],
+                         menu_icon="bootstrap-fill", default_index=1,
+                         styles={
+                             "container": {"padding": "0!important", "background-color": "#f0f2f6"},
+                             "icon": {"font-size": "29px"}, #https://icons.getbootstrap.com/
+                                }
+                        )
+
 
 st.sidebar.write("""
 ## Disclaimer
