@@ -172,12 +172,13 @@ if(selected == "Dollars"):
     df_data = load_data('./dollar.csv')
 
     blank_line(2)
-    #st.write("last modified: %s" % time.ctime(os.path.getmtime('./dollar.csv')))
+    #st.write("Last update: %s" % time.ctime(os.path.getmtime('./dollar.csv')))
     file_time = path.getmtime('./dollar.csv')
     st.write("last modified: %d minutes ago" % int((time.time() - file_time) / 60.0))
+    st.caption("The values are updated every hour.")
     st.write("")
 
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2, col3 = st.columns(3)
 
     col1.header("USD/KRW")
     colName = "USD/KRW"
