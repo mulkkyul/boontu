@@ -133,7 +133,8 @@ if(selected == "Dollars"):
 
     if(is_file_older_than_x_seconds('./dollar.csv',60*60)):
         with st.spinner('Retrieving the data from the server...'):
-            date_end = (datetime.now() - relativedelta(days=1))
+            #date_end = (datetime.now() - relativedelta(days=1))
+            date_end = datetime.now()
             date_begin = datetime.now() - relativedelta(weeks=52)
             date_begin = date_begin.strftime("%d/%m/%Y")
             date_end = date_end.strftime("%d/%m/%Y")
@@ -174,7 +175,7 @@ if(selected == "Dollars"):
     blank_line(2)
     #st.write("Last update: %s" % time.ctime(os.path.getmtime('./dollar.csv')))
     file_time = path.getmtime('./dollar.csv')
-    st.write("last modified: %d minutes ago" % int((time.time() - file_time) / 60.0))
+    st.write("Last update: %d minutes ago." % int((time.time() - file_time) / 60.0))
     st.caption("The values are updated every hour.")
     st.write("")
 
